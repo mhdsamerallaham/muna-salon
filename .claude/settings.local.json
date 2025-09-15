@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init:*)",
+      "Bash(.node_modules.bintailwindcss init -p)",
+      "Bash(./node_modules/.bin/tailwindcss:*)",
+      "Bash(npm run tailwindcss:*)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(npm run dev:*)",
+      "Bash(npm init:*)",
+      "Bash(npm start)",
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:pin.it)",
+      "WebFetch(domain:api.pinterest.com)",
+      "Bash(curl:*)",
+      "Bash(node server.js)",
+      "Bash(node:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(npm run build:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
