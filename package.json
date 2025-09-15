@@ -1,34 +1,34 @@
 {
   "name": "muna-salon",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "🌸 Modern home-visit hair salon website with advanced booking system",
+  "main": "backend/server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "dev-frontend": "cd frontend && npm run dev",
+    "dev-backend": "cd backend && npm start",
+    "preview": "cd frontend && npm run preview",
+    "production": "npm run build && npm start"
   },
-  "dependencies": {
-    "framer-motion": "^12.23.12",
-    "lucide-react": "^0.544.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.1"
+  "keywords": [
+    "hair-salon",
+    "appointment-booking",
+    "react",
+    "nodejs",
+    "vite",
+    "tailwindcss",
+    "arabic",
+    "turkish"
+  ],
+  "author": "Muna Kuaför",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
   },
-  "devDependencies": {
-    "@eslint/js": "^9.33.0",
-    "@types/node": "^24.4.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^5.0.0",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.13",
-    "vite": "^7.1.2"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhdsamerallaham/muna-salon.git"
   }
 }
