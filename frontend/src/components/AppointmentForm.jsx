@@ -67,7 +67,7 @@ const AppointmentForm = ({ language = 'ar' }) => {
 
   const fetchAvailableSlots = async (date) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/appointments/available-slots?date=${date}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments/available-slots?date=${date}`);
       const result = await response.json();
       if (result.success) {
         setBlockedSlots(result.blockedSlots || []);
@@ -81,7 +81,7 @@ const AppointmentForm = ({ language = 'ar' }) => {
 
   const fetchClosedDays = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/admin/closed-days');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/closed-days`);
       const result = await response.json();
       if (result.success) {
         setClosedDays(result.closedDays || []);
@@ -142,7 +142,7 @@ const AppointmentForm = ({ language = 'ar' }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5001/api/appointments', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

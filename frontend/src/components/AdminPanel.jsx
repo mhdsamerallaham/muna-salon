@@ -52,7 +52,7 @@ const AdminPanel = ({ language = 'ar' }) => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/admin/appointments');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/appointments`);
       const result = await response.json();
       if (result.success) {
         setAppointments(result.appointments);
@@ -64,7 +64,7 @@ const AdminPanel = ({ language = 'ar' }) => {
 
   const fetchClosedDays = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/admin/closed-days');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/closed-days`);
       const result = await response.json();
       if (result.success) {
         setClosedDays(result.fullData);
@@ -79,7 +79,7 @@ const AdminPanel = ({ language = 'ar' }) => {
 
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:5001/api/admin/closed-days', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/closed-days`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ const AdminPanel = ({ language = 'ar' }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5001/api/admin/closed-days/${date}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/closed-days/${date}`, {
         method: 'DELETE',
       });
 
@@ -130,7 +130,7 @@ const AdminPanel = ({ language = 'ar' }) => {
 
   const updateAppointmentStatus = async (appointmentId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/appointments/${appointmentId}/status`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments/${appointmentId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -184,7 +184,7 @@ const AdminPanel = ({ language = 'ar' }) => {
   // Fetch available slots for selected date
   const fetchAvailableSlotsForDate = async (date) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/appointments/available-slots?date=${date}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments/available-slots?date=${date}`);
       const result = await response.json();
       if (result.success) {
         setAvailableSlots(result.availableSlots || []);
@@ -218,7 +218,7 @@ const AdminPanel = ({ language = 'ar' }) => {
 
     setIsAddingAppointment(true);
     try {
-      const response = await fetch('http://localhost:5001/api/admin/appointments', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/appointments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
